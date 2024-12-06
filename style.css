@@ -1,0 +1,75 @@
+:root{
+  --color1: lightgreen;
+  --color2: pink;
+  --color3: lightblue;
+  --color4: lightsalmon;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: url(./images/bg.jpg) no-repeat center/cover;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  background: rgba(0, 0, 0, 0.594);
+  width: calc(100% - 50px);
+  padding: 20px 20px 6px;
+  box-shadow: 0px 0px 8px 4px black;
+  border-radius: 40px;
+  backdrop-filter: blur(2px);
+}
+
+.card:before{
+  content: "\2730";
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  font-size: 2rem;
+}
+
+h1{
+  margin-bottom: 24px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.polygon-container{
+filter: drop-shadow(-1px 6px 3px var(--color3));
+/* Mettre le parent en GRID */
+place-self: center left;
+}
+
+.polygon{
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  height: 100px;
+  width: 100px;
+  background: rgb(198,189,83);
+background: linear-gradient(0deg, rgba(198,189,83,1) 75%, rgba(15,228,39,1) 100%);
+}
+
+.polygon::after{
+  content: "Un texte";
+  position: absolute;
+  color: var(--color1);
+  background: var(--color4);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(345deg);
+  width: 90px;
+  padding: 4px;
+  text-align: center;
+}
